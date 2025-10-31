@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    unsigned int numDecimal;
+    std::string binario = ""; 
+    cout << "Ingrese un numero decimal (entero no negativo): ";
+    cin >> numDecimal;
+
+    do {
+        int residuo = numDecimal % 2;
+        char digito = (residuo == 1) ? '1' : '0';
+        binario = digito + binario;
+
+        numDecimal /= 2;
+
+    } while (numDecimal > 0);
+
+    cout << "El numero en binario es: " << binario <<endl;
+
+    return 0;
+}
